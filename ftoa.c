@@ -42,6 +42,10 @@ main(int argc, char *argv[])
 	else
 		sscanf(argv[1], "%g", &d);
 
+#if DEBUG
+	printf("%e\n", d);
+#endif
+
 	unpack(d, u);
 
 #if DEBUG
