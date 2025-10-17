@@ -26,10 +26,16 @@ This fits because it is a power of 2
 16777216.0
 ```
 
-Now starting to lose precision
+Now losing precision
 ```
 ./a.out 16777217
 16777216.0
+```
+
+But this larger integer okay because the least significant bit is zero
+```
+./a.out 16777218
+16777218.0
 ```
 
 Biggest float
