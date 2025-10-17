@@ -38,7 +38,7 @@
 
 #define DEBUG 0
 
-int ftoa(float d, char *buf);
+char *ftoa(float d, char *buf);
 int unpack(float d, uint32_t *u, char *buf);
 void setbit(uint32_t *u, int k);
 int mulby10(uint32_t *u);
@@ -55,8 +55,8 @@ char buf[200];
 int
 main(int argc, char *argv[])
 {
-	int k;
 	float d;
+	char *s;
 
 	if (argc < 2)
 		exit(1);
@@ -66,13 +66,13 @@ main(int argc, char *argv[])
 	else
 		sscanf(argv[1], "%g", &d);
 
-	k = ftoa(d, buf);
-	puts(buf + k);
+	s = ftoa(d, buf);
+	puts(s);
 }
 
-// returns start index for result in buf
+// returns start of string in buf
 
-int
+char *
 ftoa(float d, char *buf)
 {
 	int k;
@@ -83,7 +83,7 @@ ftoa(float d, char *buf)
 #endif
 
 	if (unpack(d, u, buf))
-		return 0; // inf or nan
+		return buf; // inf or nan
 
 #if DEBUG
 	printf("%x %x %x %x . %x %x %x %x %x\n", u[8], u[7], u[6], u[5], u[4], u[3], u[2], u[1], u[0]);
@@ -111,7 +111,7 @@ ftoa(float d, char *buf)
 
 	buf[40] = '.';
 
-	return k;
+	return buf + k;
 }
 
 // returns 1 for inf or nan
