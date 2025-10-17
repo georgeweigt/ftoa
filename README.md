@@ -32,7 +32,7 @@ Now losing precision
 16777216.0
 ```
 
-This larger integer is okay because the least significant bit is zero
+This larger integer fits because the least significant bit is zero
 ```
 ./a.out 16777218
 16777218.0
