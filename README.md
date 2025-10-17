@@ -8,22 +8,28 @@ make
 
 Examples
 
-Decimals are approximated
+Most decimals are approximated
 ```
-./a.out 1.23
-1.230000019073486328125
-```
-
-Ten to the 10th
-```
-./a.out 1e10
-10000000000.0
+./a.out 0.1
+0.100000001490116119384765625
 ```
 
-Ten to the 11th
+Largest integer that fits in 24 bits
 ```
-./a.out 1e11
-99999997952.0
+./a.out 16777215
+16777215.0
+```
+
+This fits because it is a power of 2
+```
+./a.out 16777216
+16777216.0
+```
+
+Now starting to lose precision
+```
+./a.out 16777217
+16777216.0
 ```
 
 Biggest float
