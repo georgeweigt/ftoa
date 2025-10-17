@@ -32,10 +32,16 @@ Now losing precision
 16777216.0
 ```
 
-But this larger integer okay because the least significant bit is zero
+This larger integer okay because the least significant bit is zero
 ```
 ./a.out 16777218
 16777218.0
+```
+
+Losing precision again
+```
+./a.out 16777219
+16777220.0
 ```
 
 Biggest float
