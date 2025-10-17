@@ -67,6 +67,7 @@ main(int argc, char *argv[])
 		sscanf(argv[1], "%g", &d);
 
 	s = ftoa(d, buf);
+
 	puts(s);
 }
 
