@@ -1,5 +1,3 @@
-// October 17, 2025
-//
 // Print the exact decimal value of a C float
 //
 // Examples
