@@ -81,7 +81,7 @@ unpack(float d, uint32_t *u)
 	uint32_t m, n;
 	n = *((uint32_t *) &d);
 	x = (n >> 23) & 0xff; // exponent
-	m = n & 0x7fffff; // 23 bit mantissa
+	m = n << 9; // 23 bit mantissa
 	if (x == 0xff) {
 		if (m == 0)
 			(n & 0x80000000) ? puts("-inf") : puts("inf");
@@ -93,7 +93,7 @@ unpack(float d, uint32_t *u)
 	if (x)
 		setbit(u, x--); // leading 1
 	while (m) {
-		if (m & 0x400000) // test leading bit
+		if (m & 0x80000000) // test leading bit
 			setbit(u, x);
 		x--;
 		m <<= 1;

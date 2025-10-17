@@ -1,2 +1,2 @@
 a.out: ftoa.c
-	$(CC) ftoa.c
+	$(CC) -Wall -O0 ftoa.c
