@@ -70,7 +70,7 @@ main(int argc, char *argv[])
 	puts(buf + k);
 }
 
-// returns starting index for buf
+// returns start index for result in buf
 
 int
 ftoa(float d, char *buf)
