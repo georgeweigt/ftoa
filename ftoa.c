@@ -7,6 +7,8 @@
 //
 // ./a.out 0x7f7fffff
 // 340282346638528859811704183484516925440.0
+//
+// (c)2025 George Weigt
 
 #include <stdio.h>
 #include <stdlib.h>
