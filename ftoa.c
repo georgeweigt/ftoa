@@ -114,7 +114,7 @@ mulby10(uint32_t *u)
 {
 	int i;
 	uint64_t t = 0;
-	for (i = 0; i < 5; i++) {
+	for (i = 0; i < 5; i++) { // 5 word bigint
 		t += (uint64_t) u[i] * 10;
 		u[i] = (uint32_t) t;
 		t >>= 32;
@@ -129,7 +129,7 @@ divby10(uint32_t *u)
 {
 	int i;
 	uint64_t r = 0;
-	for (i = 3; i >= 0; i--) {
+	for (i = 3; i >= 0; i--) { // 4 word bigint
 		r = r << 32 | u[i];
 		u[i] = (uint32_t) (r / 10);
 		r -= (uint64_t) 10 * u[i];
