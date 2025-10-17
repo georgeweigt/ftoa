@@ -14,7 +14,7 @@ Most decimals are approximated
 0.100000001490116119384765625
 ```
 
-Largest integer that fits in 24 bits
+Largest ordinary integer that fits in 24 bits
 ```
 ./a.out 16777215
 16777215.0
