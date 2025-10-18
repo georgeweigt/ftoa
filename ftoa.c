@@ -64,9 +64,10 @@ main(int argc, char *argv[])
 	if (argc < 2)
 		exit(1);
 
-	if (strncmp(argv[1], "0x", 2) == 0)
+	if (strncmp(argv[1], "0x", 2) == 0) {
 		sscanf(argv[1] + 2, "%x", (int *) &d);
-	else
+		printf("%e\n", d);
+	} else
 		sscanf(argv[1], "%g", &d);
 
 	s = ftoa(d, buf);
@@ -81,10 +82,6 @@ ftoa(float d, char *buf)
 {
 	int k;
 	uint32_t u[9]; // bigint
-
-#if DEBUG
-	printf("%e\n", d);
-#endif
 
 	if (unpack(d, u, buf))
 		return buf; // inf or nan
