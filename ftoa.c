@@ -179,7 +179,7 @@ divby10(uint32_t *u)
 	for (i = 3; i >= 0; i--) { // 4 word bigint
 		r = r << 32 | u[i];
 		u[i] = (uint32_t) (r / 10);
-		r -= (uint64_t) 10 * u[i];
+		r -= (uint64_t) u[i] * 10;
 	}
 	return (int) r;
 }
