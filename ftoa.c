@@ -47,8 +47,11 @@ int divby10(uint32_t *u);
 // 1 sign char
 // 39 leading digits max
 // 1 decimal point at buf[40]
-// 149 trailing digits max
+// 149 trailing digits max (see note)
 // 1 null terminator
+
+// Note that (5/10)^n = (1/2)^n hence the smallest mantissa bit (1/2)^149
+// requires 149 decimal digits.
 
 char buf[200];
 
