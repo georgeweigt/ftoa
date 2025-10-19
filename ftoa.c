@@ -151,7 +151,7 @@ unpack(float d, uint32_t *u, char *buf)
 void
 setbit(uint32_t *u, int k)
 {
-	k += 33; // biggest exponent is 254 -> bit index 287
+	k += 33; // exponent 0x7f (127) -> bit index 160
 	u[k / 32] |= 1 << (k % 32);
 }
 
