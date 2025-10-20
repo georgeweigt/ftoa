@@ -3,12 +3,12 @@ Print the exact decimal value of a C float.
 Build and run
 ```
 make
-./a.out 1.23
+./ftoa 1.23
 ```
 
 Examples
 ```
-./a.out 0.1
+./ftoa 0.1
 0.100000001490116119384765625
 ```
 
@@ -16,14 +16,14 @@ Arguments starting with 0x specify the hexadecimal contents of a float.
 
 Largest float
 ```
-./a.out 0x7f7fffff
+./ftoa 0x7f7fffff
 3.402823e+38
 340282346638528859811704183484516925440.0
 ```
 
 Smallest float
 ```
-./a.out 0x1
+./ftoa 0x1
 1.401298e-45
 0.00000000000000000000000000000000000000000000140129846432481707092372958328991613128026194187651577175706828388979108268586060148663818836212158203125
 ```

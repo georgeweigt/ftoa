@@ -2,6 +2,7 @@
 
 Examples
 
+gcc ftoa.c
 ./a.out 1.23
 1.230000019073486328125
 
