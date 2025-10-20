@@ -68,11 +68,11 @@ main(int argc, char *argv[])
 	if (argc < 2)
 		exit(1);
 
-	if (strncmp(argv[1], "0x", 2) == 0) {
-		sscanf(argv[1] + 2, "%x", (int *) &d);
+	if (strncmp(argv[1], "0x", 2) == 0 || strncmp(argv[1], "0X", 2) == 0) {
+		*((uint32_t *) &d) = (uint32_t) strtol(argv[1], NULL, 16);
 		printf("%e\n", d);
 	} else
-		sscanf(argv[1], "%g", &d);
+		d = strtof(argv[1], NULL);
 
 	s = ftoa(d, buf);
 
