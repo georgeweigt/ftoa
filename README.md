@@ -1,4 +1,4 @@
-Print the exact decimal value of a C float
+Print the exact decimal value of a C float.
 
 Build and run
 ```
@@ -7,8 +7,6 @@ make
 ```
 
 Examples
-
-Most decimals are approximated
 ```
 ./a.out 0.1
 0.100000001490116119384765625
