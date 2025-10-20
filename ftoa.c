@@ -116,6 +116,19 @@ ftoa(float d, char *buf)
 	return buf + k;
 }
 
+// Exponent     Leading bit
+// 0x7e         2^127
+// 0x7d         2^126
+// ...
+// 0x81         2^2
+// 0x80         2^1
+// 0x7f         2^0
+// 0x7e         2^(-1)
+// 0x7d         2^(-2)
+// ...
+// 0x01         2^(-126)
+// 0x00         0
+
 // returns 1 for inf or nan
 
 int
