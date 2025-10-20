@@ -14,6 +14,8 @@ Most decimals are approximated
 0.100000001490116119384765625
 ```
 
+Arguments starting with 0x specify the hexadecimal contents of a float.
+
 Largest float
 ```
 ./a.out 0x7f7fffff

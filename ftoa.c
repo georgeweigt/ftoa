@@ -5,6 +5,8 @@ Examples
 ./a.out 1.23
 1.230000019073486328125
 
+Arguments starting with 0x specify the hexadecimal contents of a float.
+
 ./a.out 0x7f000000
 1.701412e+38
 170141183460469231731687303715884105728.0
