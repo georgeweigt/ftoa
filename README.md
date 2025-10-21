@@ -1,14 +1,10 @@
 Print the exact decimal value of a C float.
 
-Build and run
-```
-make
-./ftoa 1.23
-```
-
 Examples
 ```
+make
 ./ftoa 0.1
+0x3dcccccd
 0.100000001490116119384765625
 ```
 

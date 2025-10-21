@@ -3,8 +3,9 @@
 Examples
 
 gcc ftoa.c
-./a.out 1.23
-1.230000019073486328125
+./a.out 0.1
+0x3dcccccd
+0.100000001490116119384765625
 
 Arguments starting with 0x specify the hexadecimal contents of a float.
 
@@ -74,8 +75,10 @@ main(int argc, char *argv[])
 	if (strncmp(argv[1], "0x", 2) == 0 || strncmp(argv[1], "0X", 2) == 0) {
 		*((uint32_t *) &d) = (uint32_t) strtol(argv[1], NULL, 16);
 		printf("%e\n", d);
-	} else
+	} else {
 		d = strtof(argv[1], NULL);
+		printf("0x%08x\n", *((uint32_t *) &d));
+	}
 
 	s = ftoa(d, buf);
 
