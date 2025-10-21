@@ -128,13 +128,13 @@ ftoa(float d, char *buf)
 // Exponent     Leading bit
 // 0x7e         2^127
 // 0x7d         2^126
-// ...
+// :
 // 0x81         2^2
 // 0x80         2^1
 // 0x7f         2^0
 // 0x7e         2^(-1)
 // 0x7d         2^(-2)
-// ...
+// :
 // 0x01         2^(-126)
 // 0x00         0
 
@@ -154,8 +154,12 @@ unpack(float d, uint32_t *u, char *buf)
 				strcpy(buf, "-inf");
 			else
 				strcpy(buf, "inf");
-		} else
-			strcpy(buf, "nan");
+		} else {
+			if (n & 0x80000000)
+				strcpy(buf, "-nan");
+			else
+				strcpy(buf, "nan");
+		}
 		return 1;
 	}
 	memset(u, 0, 36); // 9 words = 36 bytes
