@@ -1,6 +1,5 @@
 Print the exact decimal value of a C float.
 
-Examples
 ```
 make
 ./ftoa 0.1
@@ -10,7 +9,8 @@ make
 
 Arguments starting with 0x specify the hexadecimal contents of a float.
 
-Largest float
+Biggest float
+
 ```
 ./ftoa 0x7f7fffff
 3.402823e+38
@@ -18,6 +18,7 @@ Largest float
 ```
 
 Smallest float
+
 ```
 ./ftoa 0x1
 1.401298e-45

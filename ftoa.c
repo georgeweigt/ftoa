@@ -1,7 +1,5 @@
 /* Print the exact decimal value of a C float
 
-Examples
-
 gcc ftoa.c
 ./a.out 0.1
 0x3dcccccd
